@@ -18,6 +18,6 @@ public class PingBotMain implements EventListener {
     }
     @Override
     public void onEvent(@Nonnull GenericEvent event) {
-
+        
     }
 }
