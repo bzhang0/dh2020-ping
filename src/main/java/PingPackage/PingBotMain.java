@@ -12,7 +12,9 @@ public class PingBotMain {
     public static void main(String[] args) throws LoginException {
         JDA jda = JDABuilder
                 .createDefault("NzY3MTUyMTE1ODE0MTA1MTE5.X4twFQ.x6xCy1L_aJVyXrKREiizlVYd42I")
-                .addEventListeners(new MessageEventListener())
+                .addEventListeners(
+                        new PingBotMain(),
+                        new MasterMessageRespond())
                 .build();
         System.out.println(jda.getInviteUrl());
     }
@@ -22,7 +24,6 @@ class MasterMessageRespond extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
         Message messageMessage = e.getMessage();
         String message = e.getMessage().getContentRaw();
-
         if (message.equals("!ping")) {
             e.getChannel().sendMessage("pong!").complete();
         }
