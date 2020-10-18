@@ -17,7 +17,7 @@ public class MasterMessageRespond extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
         messageLog(e);
-        MasterGameAction.storeUsers(e);
+        MasterGameAction.storeUsers(e.getGuild());
 
 //        User author = e.getAuthor();
         Member member = e.getMember();
