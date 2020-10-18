@@ -4,8 +4,6 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-
-import java.util.EmptyStackException;
 import java.util.Scanner;
 
 public class MasterMessageRespond extends ListenerAdapter {
@@ -24,9 +22,6 @@ public class MasterMessageRespond extends ListenerAdapter {
 
         TextChannel channel = e.getChannel();
 
-        System.out.println("Message sent by " + author.getName() + " [" +
-                author.getId() + "]: " + message.getContentRaw());
-
         if (msg.length() > PREFIX.length() && msg.startsWith(PREFIX) && !e.getAuthor().isBot()) {
             long startTime = System.nanoTime();
             Scanner sentMessageInput = new Scanner(msg.substring(PREFIX.length()));
@@ -42,7 +37,7 @@ public class MasterMessageRespond extends ListenerAdapter {
         }
 
         if (msg.contains("play")) {
-            channel.addReactionById(message.getId(),"\uD83C\uDFAE").complete();
+            channel.addReactionById(message.getId(), "\uD83C\uDFAE").complete();
         }
 
         if (msg.equals(".help")) {
