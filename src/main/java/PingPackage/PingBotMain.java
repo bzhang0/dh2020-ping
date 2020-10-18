@@ -12,6 +12,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 public class PingBotMain extends ListenerAdapter {
+
+    public static final String VERSION = "1.0";
+
     public static void main(String[] args) throws LoginException {
         JDA jda = JDABuilder
             .createDefault("NzY3MTUyMTE1ODE0MTA1MTE5.X4twFQ.x6xCy1L_aJVyXrKREiizlVYd42I")
@@ -37,6 +40,7 @@ public class PingBotMain extends ListenerAdapter {
         }
         return null;
     }
+
     // Reads the Steam API given by Gabe using BufferedReader
     // Method includes parser to indicate name of owned games with subsequent play times (in minutes)
     private static void readSteamAPI() throws IOException {

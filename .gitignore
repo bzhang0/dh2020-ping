@@ -21,3 +21,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+<<<<<<< Updated upstream
+=======
+*.xml
+*.xml
+*.xml
+.gradle/5.2.1/javaCompile/javaCompile.lock
+.gradle/5.2.1/fileHashes/fileHashes.lock
+.gradle/5.2.1/executionHistory/executionHistory.lock
+*.lock
+*.bin
+*.bin
+>>>>>>> Stashed changes
