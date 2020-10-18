@@ -19,6 +19,7 @@ public class MasterMessageAction extends ListenerAdapter {
                 .setTimestamp(LocalDateTime.now());
     }
 
+    //embed
     public static EmbedBuilder rColorEmbed(EmbedBuilder embed) {
         return embed.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
     }

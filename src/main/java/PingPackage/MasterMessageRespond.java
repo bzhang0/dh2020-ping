@@ -30,7 +30,9 @@ public class MasterMessageRespond extends ListenerAdapter {
             String prompt = sentMessageInput.next();
 //            e.getMember().get
 
-//            if (prompt.equalsIgnoreCase("quit") && ;
+//            if (prompt.equalsIgnoreCase("quit") && ()) {
+//
+//            }
         }
         if (msg.equals(".ping")) {
             channel.sendMessage("pong!").complete();

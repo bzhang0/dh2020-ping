@@ -5,6 +5,11 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 public class PingBotMain extends ListenerAdapter {
     public static void main(String[] args) throws LoginException {
@@ -14,8 +19,7 @@ public class PingBotMain extends ListenerAdapter {
             .build();
         System.out.println(jda.getInviteUrl());
     }
-<<<<<<< Updated upstream
-=======
+
     // Takes an input file and checks if it exists
     // Promptly returns it to another method for later use
     private static File identifyFile() {
@@ -59,5 +63,4 @@ public class PingBotMain extends ListenerAdapter {
         }
         in.close();
     }
->>>>>>> Stashed changes
 }

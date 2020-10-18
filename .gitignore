@@ -24,3 +24,8 @@ hs_err_pid*
 *.xml
 *.xml
 *.xml
+.gradle/5.2.1/javaCompile/javaCompile.lock
+.gradle/5.2.1/fileHashes/fileHashes.lock
+.gradle/5.2.1/executionHistory/executionHistory.lock
+*.lock
+*.bin
