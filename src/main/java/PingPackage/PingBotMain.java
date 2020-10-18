@@ -17,7 +17,7 @@ public class PingBotMain extends ListenerAdapter {
 
     public static void main(String[] args) throws LoginException {
         JDA jda = JDABuilder
-            .createDefault("NzY3MTUyMTE1ODE0MTA1MTE5.X4twFQ.x6xCy1L_aJVyXrKREiizlVYd42I")
+            .createDefault("NzY3MTUyMTE1ODE0MTA1MTE5.X4twFQ.x6xCy1L_aJVyXrKREiizlVYd42I") // token disabled now :)
             .addEventListeners(new PingBotMain(), new MasterMessageRespond())
             .build();
         System.out.println(jda.getInviteUrl());
