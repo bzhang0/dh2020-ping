@@ -1,13 +1,19 @@
 package PingPackage;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.TextChannel;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
+<<<<<<< Updated upstream
 import java.util.EmptyStackException;
 
+=======
+>>>>>>> Stashed changes
 public class MasterMessageRespond extends ListenerAdapter {
 
     private String PREFIX = ".";
@@ -43,4 +49,8 @@ public class MasterMessageRespond extends ListenerAdapter {
 
         e.getChannel().sendMessage(MasterMessageAction.defaultEmbed(embed, "help", PREFIX).build()).complete();
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
