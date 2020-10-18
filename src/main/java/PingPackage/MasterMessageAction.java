@@ -17,8 +17,6 @@ public class MasterMessageAction extends ListenerAdapter {
         return rColorEmbed(embed).setAuthor(title)
                 .setFooter(prefix + "help")
                 .setTimestamp(LocalDateTime.now());
-
-
     }
 
     public static EmbedBuilder rColorEmbed(EmbedBuilder embed) {

@@ -1,12 +1,12 @@
 package PingPackage;
 
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.TextChannel;
+import net.dv8tion.jda.api.entities.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.EmptyStackException;
+import java.util.Scanner;
 
 public class MasterMessageRespond extends ListenerAdapter {
 
@@ -14,13 +14,29 @@ public class MasterMessageRespond extends ListenerAdapter {
 
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
+        messageLog(e);
+
+        User author = e.getAuthor();
+        Member member = e.getMember();
+
         Message message = e.getMessage();
-        TextChannel channel = e.getChannel();
         String msg = message.getContentRaw();
 
-        System.out.println("Message sent by " + e.getAuthor().getName() + " [" +
-                e.getAuthor().getId() + "]: " + message.getContentRaw());
+        TextChannel channel = e.getChannel();
 
+        System.out.println("Message sent by " + author.getName() + " [" +
+                author.getId() + "]: " + message.getContentRaw());
+
+        if (msg.length() > PREFIX.length() && msg.startsWith(PREFIX) && !e.getAuthor().isBot()) {
+            long startTime = System.nanoTime();
+            Scanner sentMessageInput = new Scanner(msg.substring(PREFIX.length()));
+
+            String authorID = author.getId();
+            String prompt = sentMessageInput.next();
+//            e.getMember().get
+
+//            if (prompt.equalsIgnoreCase("quit") && ;
+        }
         if (msg.equals(".ping")) {
             channel.sendMessage("pong!").complete();
         }
@@ -42,5 +58,11 @@ public class MasterMessageRespond extends ListenerAdapter {
         embed.addField(PREFIX + "blabla", "HI GUBA", false);
 
         e.getChannel().sendMessage(MasterMessageAction.defaultEmbed(embed, "help", PREFIX).build()).complete();
+    }
+
+    public void messageLog(GuildMessageReceivedEvent e) {
+        System.out.println("Message in " + e.getGuild().getName() + " sent by " +
+                e.getAuthor().getName() + " in " + e.getChannel().getName() +
+                ": " + e.getMessage().getContentRaw() + " ");
     }
 }
