@@ -12,11 +12,12 @@ import java.util.Scanner;
 
 public class MasterMessageRespond extends ListenerAdapter {
 
-    private String PREFIX = ".";
+    public static String PREFIX = ".";
 
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
         messageLog(e);
+        MasterGameAction.storeUsers(e);
 
 //        User author = e.getAuthor();
         Member member = e.getMember();
@@ -58,6 +59,8 @@ public class MasterMessageRespond extends ListenerAdapter {
                 channel.sendMessage(embed.build()).complete();
             } else if (prompt.equalsIgnoreCase("help")) {
                 help(e);
+            } else if (prompt.equalsIgnoreCase("mygames")) {
+                MasterGameAction.ownedGames(e);
             }
         }
 
